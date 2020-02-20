@@ -1,0 +1,16 @@
+CREATE OR REPLACE FUNCTION process_delete_to_queue() RETURNS TRIGGER
+AS $$
+BEGIN
+if(TG_OP=INSERT) THEN
+DELETE FROM queue WHERE id_client=OLD.id_client;
+IF NOT FOUND THEN
+RETURN NULL;
+END IF;
+RETURN OLD;
+END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER Delete_queue
+AFTER INSERT ON connection
+FOR ROW EXECUTE PROCEDURE process_delete_to_queue ();

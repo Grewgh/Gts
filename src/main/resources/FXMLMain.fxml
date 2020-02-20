@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="run.Controller">
+   <children>
+      <TabPane fx:id="tabPaneMain" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabTable" text="Таблицы">
+               <content>
+                  <TabPane fx:id="tabPane" prefHeight="584.0" prefWidth="791.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab fx:id="gtsTab" text="Гтс">
+                           <content>
+                              <AnchorPane fx:id="gtsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="548.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="gtsTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                      <columns>
+                                        <TableColumn fx:id="gtsId" prefWidth="284.0" text="ID" />
+                                        <TableColumn fx:id="gtsName" prefWidth="317.0" text="Название" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="add_gts" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_gts" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_gts" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_gts" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_gts" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_gts" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="atsTab" text="Атс">
+                           <content>
+                              <AnchorPane fx:id="atsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="atsTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                      <columns>
+                                        <TableColumn fx:id="atsId" prefWidth="204.0" text="ID" />
+                                        <TableColumn fx:id="atsName" prefWidth="202.0" text="Название" />
+                                          <TableColumn fx:id="atsIdGts" prefWidth="194.0" text="ID гтс" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="add_ats" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_ats" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_ats" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_ats" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_ats" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_ats" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="city_atsTab" text="Городская">
+                           <content>
+                              <AnchorPane fx:id="city_atsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="city_atsTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="city_atsId" prefWidth="200.0" text="ID" />
+                                          <TableColumn fx:id="city_atsId_ats" prefWidth="200.0" text="ID атс" />
+                                          <TableColumn fx:id="city_atsName" prefWidth="201.0" text="Название" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_city_ats" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_city_ats" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="update_city_ats" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleUpdate_city_ats" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="regionTab" text="Район">
+                           <content>
+                              <AnchorPane fx:id="regionAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="regionTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="regionId" prefWidth="204.0" text="ID" />
+                                          <TableColumn fx:id="regionName" prefWidth="202.0" text="Название" />
+                                          <TableColumn fx:id="IdCity_ats" prefWidth="194.0" text="ID атс" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_region" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_region" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_region" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_region" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_region" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_region" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="streetTab" text="Улица">
+                           <content>
+                              <AnchorPane fx:id="streetAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="streetTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="streetId" prefWidth="204.0" text="ID" />
+                                          <TableColumn fx:id="streetName" prefWidth="202.0" text="Название" />
+                                          <TableColumn fx:id="streetIdRegion" prefWidth="194.0" text="ID района" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_street" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_street" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_street" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_street" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_street" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_street" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="houseTab" text="Дом">
+                           <content>
+                              <AnchorPane fx:id="houseAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="houseTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="houseId" prefWidth="204.0" text="ID" />
+                                          <TableColumn fx:id="houseName" prefWidth="202.0" text="Номер" />
+                                          <TableColumn fx:id="houseIdStreet" prefWidth="194.0" text="ID улицы" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_house" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_house" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_house" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_house" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_house" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_house" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="apartmentTab" text="Квартира">
+                           <content>
+                              <AnchorPane fx:id="apartmentAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="apartmentTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="apartmentId" prefWidth="204.0" text="ID" />
+                                          <TableColumn fx:id="apartmentName" prefWidth="202.0" text="Номер" />
+                                          <TableColumn fx:id="apartmentIdHouse" prefWidth="194.0" text="ID дома" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_apartment" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_apartment" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_apartment" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_apartment" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_apartment" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_apartment" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="connectionTab" text="Договор">
+                           <content>
+                              <AnchorPane fx:id="connectionAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="769.0">
+                                 <children>
+                                    <TableView fx:id="connectionTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="632.0">
+                                       <columns>
+                                          <TableColumn fx:id="connectionId" prefWidth="25.0" text="ID" />
+                                          <TableColumn fx:id="connectionCon_date" prefWidth="143.0" text="Дата подключения" />
+                                          <TableColumn fx:id="connectionDis_date" prefWidth="148.0" text="Дата отключения" />
+                                          <TableColumn fx:id="connectionId_apartment" prefWidth="60.0" text="ID квартиры" />
+                                          <TableColumn fx:id="connectionType_telephone" prefWidth="91.0" text="Тип телефона" />
+                                          <TableColumn fx:id="connectionStatus" prefWidth="47.0" text="Статус" />
+                                          <TableColumn fx:id="connectionId_number" prefWidth="63.0" text="ID телефона" />
+                                          <TableColumn fx:id="connectionId_client" prefWidth="54.0" text="ID клиента" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_connection" layoutX="640.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_connection" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_connection" layoutX="640.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_connection" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_connection" layoutX="640.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_connection" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="telephone_numberTab" text="Номер телефона">
+                           <content>
+                              <AnchorPane fx:id="telephone_numberAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="telephone_numberTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="telephone_numberId" prefWidth="76.0" text="ID" />
+                                          <TableColumn fx:id="telephone_numberNumber" prefWidth="204.0" text="Номер" />
+                                          <TableColumn fx:id="statusTelephone_number" prefWidth="121.0" text="Статус" />
+                                          <TableColumn fx:id="type_atsTelephone_number" prefWidth="200.0" text="Тип атс" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_telephone_number" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_telephone_number" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_telephone_number" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_telephone_number" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_telephone_number" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_telephone_number" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="exemptionTab" text="Льготы">
+                           <content>
+                              <AnchorPane fx:id="exemptionAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="exemptionTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="exemptionId" prefWidth="204.0" text="ID" />
+                                          <TableColumn fx:id="exemptionName" prefWidth="202.0" text="Название" />
+                                          <TableColumn fx:id="exemptionPercent" prefWidth="194.0" text="Скидка" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_exemption" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_exemption" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_exemption" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_exemption" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_exemption" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_exemption" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="clientTab" text="Клиент">
+                           <content>
+                              <AnchorPane fx:id="clientAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="clientTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="clientId" prefWidth="35.0" text="ID" />
+                                          <TableColumn fx:id="clientSurname" prefWidth="117.0" text="Фамилия" />
+                                          <TableColumn fx:id="clientName" prefWidth="125.0" text="Имя" />
+                                          <TableColumn fx:id="clientMiddlename" prefWidth="113.0" text="Отчество" />
+                                          <TableColumn fx:id="clientGender" prefWidth="73.0" text="Пол" />
+                                          <TableColumn fx:id="clientAge" prefWidth="37.0" text="Возраст" />
+                                          <TableColumn fx:id="clientIdExemption" prefWidth="99.0" text="ID льготы" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_client" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_client" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_client" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_client" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_client" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_client" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="receiptTab" text="Квитанция">
+                           <content>
+                              <AnchorPane fx:id="receiptAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="receiptTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="receiptId" prefWidth="35.0" text="ID" />
+                                          <TableColumn fx:id="receiptId_con" prefWidth="69.0" text="ID договора" />
+                                          <TableColumn fx:id="receiptAccrual_date" prefWidth="167.0" text="Дата начисления" />
+                                          <TableColumn fx:id="receiptSum" prefWidth="113.0" text="К оплате" />
+                                          <TableColumn fx:id="receiptStatus" prefWidth="98.0" text="Статус" />
+                                          <TableColumn fx:id="receiptPayment_date" prefWidth="119.0" text="Дата оплаты" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_receipt" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_receipt" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_receipt" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_receipt" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_receipt" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_receipt" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tariff" text="Тариф">
+                           <content>
+                              <AnchorPane fx:id="tariffAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="tariffTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="tariffId" prefWidth="103.0" text="ID" />
+                                          <TableColumn fx:id="tariffDay_night" prefWidth="172.0" text="День/ночь" />
+                                          <TableColumn fx:id="tariffType" prefWidth="180.0" text="Тип" />
+                                          <TableColumn fx:id="tariffPrice_minute" prefWidth="145.0" text="За минуту" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_tariff" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_tariff" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_tariff" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_tariff" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_tariff" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_tariff" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="callTab" text="Вызов">
+                           <content>
+                              <AnchorPane fx:id="callAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="callTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="callId" prefWidth="35.0" text="ID" />
+                                          <TableColumn fx:id="callId_con" prefWidth="62.0" text="ID договора" />
+                                          <TableColumn fx:id="call_start" prefWidth="135.0" text="Начало звонка" />
+                                          <TableColumn fx:id="call_stop" prefWidth="124.0" text="Конец звонка" />
+                                          <TableColumn fx:id="callId_tariff" prefWidth="52.0" text="ID тарифа" />
+                                          <TableColumn fx:id="call_duration" prefWidth="82.0" text="Длительность" />
+                                          <TableColumn fx:id="callSum" prefWidth="109.0" text="К оплате" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_call" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_call" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_call" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_call" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_call" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_call" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="queue" text="Очередь">
+                           <content>
+                              <AnchorPane fx:id="queueAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="queueTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="queueId" prefWidth="103.0" text="ID" />
+                                          <TableColumn fx:id="queueClientId" prefWidth="172.0" text="ID клиента" />
+                                          <TableColumn fx:id="queueDate" prefWidth="180.0" text="Дата постановки" />
+                                          <TableColumn fx:id="queueExemption" prefWidth="145.0" text="Льгота" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_queue" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_queue" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_queue" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_queue" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_queue" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_queue" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="payphone" text="Таксофоны">
+                           <content>
+                              <AnchorPane fx:id="payphoneAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="780.0">
+                                 <children>
+                                    <TableView fx:id="payphoneTableView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="602.0">
+                                       <columns>
+                                          <TableColumn fx:id="payphoneId" prefWidth="86.0" text="ID" />
+                                          <TableColumn fx:id="payphoneId_house" prefWidth="256.0" text="ID дома" />
+                                          <TableColumn fx:id="payphoneId_telephone_number" prefWidth="258.0" text="ID номера" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="add_payphone" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAdd_payphone" prefHeight="25.0" prefWidth="150.0" text="Добавить" />
+                                    <Button fx:id="del_payphone" layoutX="620.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleDel_payphone" prefHeight="25.0" prefWidth="150.0" text="Удалить" />
+                                    <Button fx:id="update_payphone" layoutX="620.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdate_payphone" prefHeight="25.0" prefWidth="150.0" text="Редактировать" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </content>
+            </Tab>
+          <Tab fx:id="tabQuery" text="Запросы">
+               <content>
+                  <TabPane fx:id="tabPane2" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab fx:id="request1Tab" text="Поиск клиента">
+                        <content>
+                          <AnchorPane fx:id="request1AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="request1TableView" prefHeight="488.0" prefWidth="800.0">
+                                      <columns>
+                                        <TableColumn fx:id="request1IdAts" prefWidth="78.0" text="ID атс" />
+                                        <TableColumn fx:id="request1Surname" prefWidth="238.0" text="Фамилия" />
+                                          <TableColumn fx:id="request1Name" prefWidth="235.0" text="Имя" />
+                                          <TableColumn fx:id="request1Middlename" prefWidth="231.0" text="Отчество" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="request1Find" layoutX="300.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleFind_request1" prefHeight="25.0" prefWidth="200.0" text="Поиск" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab fx:id="request2Tab" text="Поиск свободных номеров">
+                           <content>
+                              <AnchorPane fx:id="request2AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="request2TableView" prefHeight="488.0" prefWidth="800.0">
+                                       <columns>
+                                          <TableColumn fx:id="request2Number" prefWidth="781.0" text="Номер телефона" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="request2Find" layoutX="300.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleFind_request2" prefHeight="25.0" prefWidth="200.0" text="Поиск" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="request3Tab" text="Поиск таксофона">
+                           <content>
+                              <AnchorPane fx:id="request3AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="request3TableView" prefHeight="488.0" prefWidth="800.0">
+                                       <columns>
+                                          <TableColumn fx:id="request3idPayphone" prefWidth="799.0" text="ID таксофона" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="request3Find" layoutX="300.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleFind_request3" prefHeight="25.0" prefWidth="200.0" text="Поиск" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,1 @@
+SELECT id_client FROM queue WHERE exemption=true order by queue_date desc

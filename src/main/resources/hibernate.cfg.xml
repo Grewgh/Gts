@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5433/bd</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">1994</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.connection.pool_size">100</property>
+        <property name="hibernate.current_session_context_class">
+            thread</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+        <property name="hibernate.connection.CharSet">
+            utf8</property>
+        <property name="hibernate.connection.characterEncoding">
+            utf8</property>
+        <property name="hibernate.connection.useUnicode">
+            true</property>
+
+        <mapping class="model.Ats" />
+        <mapping class="model.Gts" />
+        <mapping class="model.City_ats" />
+        <mapping class="model.Region" />
+        <mapping class="model.Street" />
+        <mapping class="model.House" />
+        <mapping class="model.Apartment" />
+        <mapping class="model.Connection" />
+        <mapping class="model.Telephone_number" />
+        <mapping class="model.Exemption" />
+        <mapping class="model.Client" />
+        <mapping class="model.Receipt" />
+        <mapping class="model.Tariff" />
+        <mapping class="model.Call" />
+        <mapping class="model.Rec_Call" />
+        <mapping class="model.Queue" />
+        <mapping class="model.Payphone" />
+
+
+        <event type="save">
+            <listener class="Event.SaveUpdate"/>
+        </event>
+
+        <event type="delete">
+            <listener class="Event.Delete"/>
+        </event>
+
+
+    </session-factory>
+</hibernate-configuration>

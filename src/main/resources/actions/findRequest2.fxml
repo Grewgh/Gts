@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Actions.FindRequest2">
+   <children>
+      <Label fx:id="label" layoutX="14.0" layoutY="67.0" text="Выберите АТС:">
+         <font>
+            <Font name="Cambria" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="atsCombobox" layoutX="200.0" layoutY="64.0" prefWidth="150.0" />
+      <Button fx:id="findButton" layoutX="10.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleFind" text="Поиск" />
+      <RadioButton fx:id="radioButton1" layoutX="94.0" layoutY="32.0" mnemonicParsing="false" text="Атс" />
+      <RadioButton fx:id="radioButton2" layoutX="160.0" layoutY="32.0" mnemonicParsing="false" selected="true" text="Гтс" />
+   </children>
+</AnchorPane>
